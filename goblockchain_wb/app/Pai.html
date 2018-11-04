@@ -73,7 +73,7 @@
             </div>
 
             <div class="form-group">
-                <label for="enderecoPai">Endereco Pai Contrato</label>
+                <label for="enderecoPai">Endereco do último Pai Contrato cadastrado</label>
                 <input type="text" class="form-control" id="enderecoPai" placeholder="..">
             </div>
             <button type="button" class="btn btn-info" onclick="consultarPai();">Consultar</button>
@@ -91,7 +91,7 @@
                 <label for="emailPai">Informar email:</label>
                 <input type="email" class="form-control" id="emailPai" placeholder="xxx@xxx.com">
             </div>
-            <button type="button" class="btn btn-success" onclick="alterarEmail()">Cadastrar</button>
+            <button type="button" class="btn btn-success" onclick="alterarEmail()">Alterar Email</button>
 
             <h3 class="mt-3">Dados Filho</h3>
 
@@ -110,20 +110,24 @@
 
             <div class="form-group">
                 <label for="nomeConsulta">Endereço Contrato</label>
-                <input type="text" class="form-control" id="endereContrato" placeholder="0x">
+                <input type="text" class="form-control" id="enderecoFilho" placeholder="0x">
             </div>
 
-            <button type="button" class="btn btn-light">Consultar</button>
+            <button type="button" class="btn btn-info" onclick="consultarFilhoPaginaPai()">Consultar</button>
 
 
             <h4 class="mt-3">Enviar Mesada</h4>
 
             <div class="form-group">
-                <label for="nomeConsulta">Valor</label>
-                <input type="number" class="form-control" id="endereContrato" placeholder="00">
+                <label for="valorMesada">Valor</label>
+                <input type="number" class="form-control" id="valorMesada" placeholder="00">
+            </div>
+            <div class="form-group">
+                <label for="enderecoTransferencia">Endereco da carteira do filho</label>
+                <input type="text" class="form-control" id="enderecoTransferencia" placeholder="0x">
             </div>
 
-            <button type="button" class="btn btn-warning">Enviar</button>
+            <button type="button" class="btn btn-warning" onclick="enviarMesada()">Enviar</button>
             <br>
 
             <div class="alert alert-success mb-5 mt-5" role="alert" style="padding-top: 15px;">

@@ -57,38 +57,38 @@
             <h3 class="mt-3">Consultar</h3>
 
             <div class="form-group">
-                <label for="nomeConsulta">Endereço Contrato</label>
-                <input type="text" class="form-control" id="endereContrato" placeholder="0x">
+                <label for="enderecoContrato">Endereço Contrato</label>
+                <input type="text" class="form-control" id="enderecoContrato" placeholder="0x">
             </div>
-            <button type="button" class="btn btn-light">Consultar</button>
+            <button type="button" class="btn btn-light" onclick="consultarFilho()">Consultar</button>
             <div class="form-group mt-3">
                 <label for="nomeConsulta">Nome</label>
                 <input type="text" class="form-control" id="nomeConsulta" readonly placeholder="..">
             </div>
             <div class="form-group">
-                <label for="idadeConsulta">Saldo Contrato</label>
+                <label for="saldoConsulta">Saldo Contrato</label>
                 <input type="text" class="form-control" id="saldoConsulta" readonly placeholder="..">
             </div>
             <div class="form-group">
-                <label for="idadeConsulta">Saldo Carteira</label>
-                <input type="text" class="form-control" id="saldoConsulta" readonly placeholder="..">
+                <label for="carteiraConsulta">Saldo Carteira</label>
+                <input type="text" class="form-control" id="carteiraConsulta" readonly placeholder="..">
             </div>
 
             <h4 class="mt-3">Sacar Mesada</h4>
 
             <div class="form-group">
-                <label for="nomeConsulta">Valor</label>
-                <input type="number" class="form-control" id="endereContrato" placeholder="00">
+                <label for="sacarValor">Valor</label>
+                <input type="number" class="form-control" id="sacarValor" placeholder="Deixar em branco para sacar tudo">
             </div>
 
-            <button type="button" class="btn btn-warning">Sacar</button>
+            <button type="button" class="btn btn-warning" onclick="sacar()">Sacar</button>
             <br>
 
             <div class="alert alert-success mb-5 mt-5" role="alert" style="padding-top: 15px;">
                 <h4 class="alert-heading">Alertas!</h4>
                 <p>Todos os alertas entre os contratos devem aparecer aqui.</p>
                 <hr>
-                <p class="mb-0">........</p>
+                <p class="mb-0" id="evento">........</p>
             </div>
             <!-- <div class="card">
                 <button type="Excluir Contrato" class="btn btn-danger">Excluir Contrato</button>
@@ -110,7 +110,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 
-    <script src="scripts/pessoa.js"></script>
+    <script src="scripts/filho.js"></script>
     <script src="scripts/main.js"></script>
 </body>
 

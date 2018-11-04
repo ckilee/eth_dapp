@@ -3,8 +3,10 @@ pragma solidity ^0.4.24;
 import "./InterfaceFilhoContrato.sol";
 
 contract FilhoContrato is InterfaceFilhoContrato {
-    string nome;
-    address enderecoCarteira;
+    string public nome;
+    address public enderecoCarteira;
+
+    event MesadaSacada(address adr,string status);
 
     constructor(string _nome, address _endereco) public {
         nome = _nome;
@@ -19,11 +21,18 @@ contract FilhoContrato is InterfaceFilhoContrato {
         return nome;
     }
     
-    function sacar() public returns(bool){
+    function sacar(uint valor) public returns(bool){
         require (enderecoCarteira == msg.sender);
-        address(enderecoCarteira).transfer(address(this).balance);
-        emit MesadaSacada();
-        return false;
+        if(valor<=0){
+            address(enderecoCarteira).transfer(address(this).balance);
+        }else if(valor<=address(this).balance){
+            address(enderecoCarteira).transfer(valor);
+        }else{
+            emit MesadaSacada(msg.sender,"Falha");
+            return false;
+        }
+        emit MesadaSacada(msg.sender,"sucesso");
+        return true;
     }
     
     function verificarSaldo() public view returns(uint256) {

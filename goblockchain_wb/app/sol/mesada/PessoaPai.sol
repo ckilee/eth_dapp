@@ -13,6 +13,7 @@ contract PessoaPai is DonoContrato {
     InterfaceFilhoContrato[] public filhoContrato;
     
     event emailAlterado(address adr,string email);
+    event criarFilho(address adr,address filhoAddress);
     
     constructor(uint _idade, string _nome) public {
         idade = _idade;
@@ -28,7 +29,7 @@ contract PessoaPai is DonoContrato {
 
     function adicionarFilho(address _address, string _nome) public apenasDono {
         InterfaceFilhoContrato filho = new FilhoContrato(_nome, _address);
-        //criar evento que recebe o endereco do filho criado
+        emit criarFilho(msg.sender,address(filho));
         filhoContrato.push(filho);
     }
     
